@@ -1,6 +1,6 @@
 /*
 PROGRAM	: fahrCelsTable.c
-AUTHOR	: Cole McGee
+AUTHOR	:
 DATE	: 06/04/2019
 DESC.	: Convert defined range of fahrenheit temperatures to celsius using while-loop.
 */
