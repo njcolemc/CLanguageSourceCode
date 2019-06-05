@@ -1,3 +1,10 @@
+/*
+PROGRAM	: fahrCelsTable.c
+AUTHOR	: Cole McGee
+DATE	: 06/04/2019
+DESC.	: Convert defined range of fahrenheit temperatures to celsius using while-loop.
+*/
+
 #include <stdio.h>
 
 /* print Fahrenheight-Celcius table for fahr = 0, 20, ..., 300 */
