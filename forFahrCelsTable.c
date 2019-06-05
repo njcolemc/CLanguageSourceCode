@@ -1,3 +1,10 @@
+/*
+PROGRAM	: forFahrCelsTable.c
+AUTHOR	: 
+DATE	: 06/04/2019
+DESC.	: Uses for-loop to convert fahrenheit to celcius for a defined range of values.
+*/
+
 #include <stdio.h>
 
 #define	LOWER	0
