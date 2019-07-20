@@ -1,41 +1,13 @@
 /*
- * Program Name  : NJCMAssn05MenuDriver.c [Change LastFirst to your own names]
+ * Program Name  : NJCMAssn05MenuDriver.c 
  * Author        : Cole McGee
  * Date Created  : 20 June 2019
- * Purpose       : [Menu driver for practice C programming files]
- *
- * You will use this file and attach your c programs to the bottom of this file,
- * but they will now be functions instead of stand-alone programs.
- * This file has Hello World included as an example.
- *
- * Using a menu driver has two purposes, first to give you experience using menu drivers,
- * second to facilitate the ease of grading multiple program assignments.
- *
- * Steps to add a program/function:
- * 1. Move to the very bottom of this file.
- * 2. Write the code for your new function (remember not to use main as its name because there can only be one main).
- * 3. Go to the top and add the prototype definition above main().
- * 4. Add a case block to run the function.
- * 5. Add a menu option.
- * 6. Run the program.
- * 7. Debug and test as needed.
- * 8. Repeat for each of your other program assignments in this chapter.
- *
- * Notes        :
- *
- * Each C program must have one - and ONLY one - main() function.
- * The main() function serves as the starting point.
- *
- * Yes! You should turn in only ONE .c file even if there are multiple programs
- * required for the chapter!
- *
- * Remember to change the name of the file to use your own name and replace NN
- * with the chapter number (use a leading 0 for chapters 1-9).
+ * Purpose       : [Menu driver to run multiple programs from one source file]
  */
 
- // preprocessor statements
+// preprocessor statements
 #include <stdio.h>   //header file for input/output
-#pragma warning(disable:4996)	// disables warning about scanf (might flag it in the editor, but it's OK)
+#pragma warning(disable:4996)	// disables warning about scanf for visual studio
 
 
 // function prototype definitions
@@ -44,9 +16,10 @@ int menu(void);
 // Primary function for Ch.5 Ex.1 plus the auxiliary function to get user data for that problem
 void exercise_05_1_min_to_hour(void);
 void getData05_1(void);
+
 // Define the variables for the above functions
-	int minutes, h, m; // minutes is user input, h and m are hours and minutes for the output
-	const int MINUTES_IN_HOUR = 60; // just incase the number of minutes in an hour changes later on down the line.
+int minutes, h, m; // minutes is user input, h and m are hours and minutes for the output
+const int MINUTES_IN_HOUR = 60; // just incase the number of minutes in an hour changes later on down the line.
 
 // This function does approximately the same as exercise_05_01 but does NOT use a separate get data function.
 void exercise_05_5_addemup(void);
@@ -55,16 +28,14 @@ void exercise_05_5_addemup(void);
 // main function
 
 int main(void){
-	// variable declaration and initialization via call to menu()
-	// This also serves as the 'priming' read for the following while loop
+
 	int selection = menu();
 
 	while (selection != 99)
 	{
-		// make a couple of blank lines on the screen to separate your program output from the menu
 		printf("\n\n");
 
-		// The switch statement is similar to a chained if-else except conditions fall through in C!
+		// backend for the menu
 		switch (selection)
 		{
 
@@ -80,14 +51,13 @@ int main(void){
 			printf("Please enter a valid selection.\n");
 		}
 
-		// make a couple of blank lines on the screen to separate your program output from the next menu
 		printf("\n\n");
 
-		// get the next menu selection, otherwise, you have an infinite loop!
+		// get the next menu selection.
 		selection = menu();
 	}
-    getchar(); getchar();
-	return 0;
+	
+	getchar(); getchar(); return 0;
 }
 
 int menu(void){
@@ -97,7 +67,7 @@ int menu(void){
 	// print the menu
 	printf("                  Menu Driver Program                  \n");
 	printf("_______________________________________________________\n\n");
-	printf(" 1. #5.1 Minutes to Hours\n");			// put brief names of your programs/functions here
+	printf(" 1. #5.1 Minutes to Hours\n");
 	printf(" 2. #5.5 AddEmUp\n\n");
 	printf("99. Exit\n\n");
 
@@ -112,18 +82,6 @@ int menu(void){
 }
 
 // ------------------------------------Program05_01-----------------------------------------------------
-/*
- * Program/Function Name: NJCMAssn05_01MinutesToHours.c
- * Chapter              : Chapter 2
- * Author               : Your Name
- * Date Created         : Today's Date
- * Purpose              : One-line description
- * Description          : Detailed description (usually 3-10 lines)
- */
-
-// good practice to comment out all necessary libraries, to know which are required for this block of program,
-// but are already included above. In this case it is just stdio.h
-//#include <stdio.h>
 
 void exercise_05_1_min_to_hour(void){
 	// Problem from book: Write a program that converts time in minutes to time in hours and minutes.
@@ -178,11 +136,6 @@ void getData05_1(void){
 }
 
 // ------------------------------------Program05_05-----------------------------------------------------
-/* Program	:
- * Author	:
- * Date		:
- * Desc.	:
- */
 
 void exercise_05_5_addemup(void){
 	// Problem from book: Change the program addemup.c which found the sum of the first 20 integers. Modify 
