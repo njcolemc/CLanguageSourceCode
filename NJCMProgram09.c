@@ -13,49 +13,48 @@
 
  // function prototype definitions
 
-int menu(void);									// Menu system to run the menu driver
+int menu(void);							// Menu system to run the menu driver
 
-void echoPound(void); 							// Classic echo program, end with #
+void echoPound(void); 						// Classic echo program, end with #
 
 void program09_01_min_driver(void);				// functions for Ch9 Problem #1
 double min(double n, double m);
 
-void program09_03_printchar_driver(void);		// functions for Ch9 Problem #3
+void program09_03_printchar_driver(void);			// functions for Ch9 Problem #3
 void printchar(char ch, int num_chars_per_line, int num_lines);
 
-void program09_06_sort_driver(void);			// functions for Ch9 Problem #6
+void program09_06_sort_driver(void);				// functions for Ch9 Problem #6
 void sort(double* x, double* y, double* z);
 
 // main function
 
 int main(void)
 {
-	// variable declaration and initialization via call to menu()
-	// This also serves as the 'priming' read for the following while loop
+	// Display a menu at the start of the program, user enters menu item to proceed.
 	int selection = menu();
 
 	while (selection != 99)
 	{
-		// make a couple of blank lines on the screen to separate your program output from the menu
+		// graphical formatting
 		printf("\n\n");
 
-		// The switch statement is similar to a chained if-else except conditions fall through in C!
+		// switch to the item that the user enters
 		switch (selection)
 		{
 
-		case 1:
-			echoPound();  // remove this line and replace with a call to your own function
+		case 1: 
+			echoPound();  // this will run echo, and end with a Pound sign
 			break;
 
-		case 2:
+		case 2: 
 			program09_01_min_driver();
 			break;
 
-		case 3:
+		case 3: 
 			program09_03_printchar_driver();
 			break;
 
-		case 4:		// remove all of the case numbers that you are not using, or add more if needed.
+		case 4:	
 			program09_06_sort_driver();
 			break;
 
@@ -63,10 +62,10 @@ int main(void)
 			printf("Please enter a valid selection.\n");
 		}
 
-		// make a couple of blank lines on the screen to separate your program output from the next menu
+		// formatting
 		printf("\n");
 
-		// get the next menu selection, otherwise, you have an infinite loop!
+		// call menu() and assign it to the switch condition above
 		selection = menu();
 	}
 
@@ -78,14 +77,14 @@ int menu(void)
 	// declare variables
 	int choice;
 
-	// print the menu
+	// print the menu with the correct numbers the user will choose
 	printf(" 1. Echo (#) \n");
 	printf(" 2. Exercise 1 Minimum\n");
 	printf(" 3. Exercise 3 Print characters\n");
-	printf(" 4. Exercise 6 Sort 3 floats\n");			// delete or comment out those you aren't using.
+	printf(" 4. Exercise 6 Sort 3 floats\n");
 	printf("99. Exit\n\n");
 
-	// get input from user
+	// get input from user and return it to main()
 	printf("Please select number and press enter: ");
 	scanf("%d", &choice);
 
@@ -95,21 +94,7 @@ int menu(void)
 	return choice;
 }
 
-// Put your first program here instead of this one. Put the others after this.
-
-/*
- * Program/Function Name: hello
- * Chapter              : Chapter 9
- * Author               : Your Name
- * Date Created         : Today's Date
- * Purpose              : One-line description
- * Description          : Detailed description (usually 3-10 lines)
- */
-
- // NOTE: Since everything is in one file, you do not need to include <stdio.h> again so comment it out.
- // I would not delete it entirely in case you want to change it to a stand-alone program again.
- //#include <stdio.h>
-
+// Echo module
 void echoPound(void)
 {
 	char ch;
@@ -120,6 +105,7 @@ void echoPound(void)
 	}
 }
 
+// Minimum finder
 void program09_01_min_driver(void)
 {
 	printf("min(3.0,7.5) = %f\n", min(3.0, 7.5));
@@ -143,6 +129,7 @@ double min(double n, double m)
 	return min;
 }
 
+// Prints a character a specified number of times, on a specified number of lines.
 void program09_03_printchar_driver(void)
 {
 	printf("\nprintchar('*', 2, 3)\n");
@@ -167,6 +154,7 @@ void printchar(char ch, int num_chars_per_line, int num_lines)
 	}
 }
 
+// feed data to program and then call our own sort() function to sort in ascending order
 void program09_06_sort_driver(void)
 {
 	double a = -2.4;
@@ -268,6 +256,7 @@ void program09_06_sort_driver(void)
 	printf("After sort : a = %f, b = %f, c = %f\n\n", a, b, c);
 }
 
+// this will sort exactly three double float numbers
 void sort(double *a, double *b, double *c)
 {
 	double temp;
