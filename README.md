@@ -1,2 +1,2 @@
 # forpapasbypapas
-this is For papa's by papa's
+An online repository of source code from CSCI 2473 C Language.
