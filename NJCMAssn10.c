@@ -12,16 +12,15 @@
 
 int main(void)
 {
-	// initializing rainfall data for 2010 - 2014
-    const float grades[NUM_TESTS][NUM_STUDENTS] =
-    {
-        {65,75,85,95,74,74,98,75,85,65},
-        {88,65,75,78,99,88,77,76,98,100},
-        {78,65,78,82,93,81,79,97,82,65},
-        {68,82,75,65,100,85,77,85,95,85},
-    };
+	// initialize grade data based on NUM_TESTS and NUM_STUDENTS
+	const float grades[NUM_TESTS][NUM_STUDENTS] =
+    	{
+        	{65,75,85,95,74,74,98,75,85,65},
+        	{88,65,75,78,99,88,77,76,98,100},
+        	{78,65,78,82,93,81,79,97,82,65},
+        	{68,82,75,65,100,85,77,85,95,85},
+    	};
 
-// ------------------------- 
 
 	float subtot, total;
 
@@ -37,7 +36,7 @@ int main(void)
 			subtot += *student_ptr;
 		subtot /= NUM_STUDENTS;
 		printf("%5d %15.1f\n", (int) (1 + (tests_ptr - grades)), subtot);
-		total += subtot; // total for all years }
+		total += subtot; // total for all tests }
 	}
 
 	//printf("\nThe test average is %.1f percent.\n\n", total/NUM_TESTS);
@@ -49,7 +48,7 @@ int main(void)
 
 	for (students = 0; students < NUM_STUDENTS; students++)
 	{ 
-		// for each month, sum rainfall over years
+		// for each student, average the grades of each test
 		for (test = 0, subtot = 0; test < NUM_TESTS; test++)
 			subtot += *(*(grades + test) + students);
 		printf(" %4.1f ", subtot/NUM_TESTS);
